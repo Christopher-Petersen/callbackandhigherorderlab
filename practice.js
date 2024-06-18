@@ -246,7 +246,7 @@ const employees = [
 const findProgrammer = (employees) => {
 
   let programmer = employees.filter(employee => employee.job === `programmer`)
-  return programmer.length > 0 ? 
+  return programmer[0]
 
 }
   
@@ -276,7 +276,7 @@ const orders = [
   Example: if tax is 0.07, the price afterTax could be calculated like this: afterTax = price * 1.07)
 */
 
-let orderTotals; // Code here
+let orderTotals = orders.map((order) => order.price * (1 + order.tax))
 
 /// /////// PROBLEM 13 //////////
 
@@ -292,7 +292,10 @@ const exampleMenuItems = [
 // Create a function called sortMenuItems which takes in an array of objects like the one above
 // and sorts the array by price from smallest to largest. It should return the sorted array.
 
-// REPLACE THIS WITH YOUR CODE
+const sortMenuItems = (exampleMenuItems) => {
+  return exampleMenuItems.sort ((a,b) => a.price - b.price)
+}
+
 
 /// /////// PROBLEM 14 //////////
 
@@ -302,4 +305,4 @@ const exampleMenuItems = [
 //
 // Make sure to use arrow functions combined with the reduce method.
 
-// REPLACE THIS WITH YOUR CODE
+const productOfArray = (numbers) => numbers.reduce((acc, cur) => acc * cur)
